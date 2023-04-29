@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.8477471, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -169,6 +169,11 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   speed: 5
+  coins: 0
+  playerColor: {r: 0, g: 0, b: 0, a: 0}
+  OnCoinCollect:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &-2948774129298162401
 MonoBehaviour:
   m_ObjectHideFlags: 0

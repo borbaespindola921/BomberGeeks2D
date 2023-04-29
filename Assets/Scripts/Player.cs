@@ -1,7 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Mirror;
+using System;
+
+[Serializable]
+public class IntEvent : UnityEvent<int> {}
 
 public class Player : NetworkBehaviour
 {
@@ -9,11 +14,24 @@ public class Player : NetworkBehaviour
     float inputX;
     float inputY;
     public float speed = 3;
+    
+    [SyncVar]
+    public int coins;
+    
+    [SyncVar]
+    public Color playerColor;
+   
+    //Events
+    public IntEvent OnCoinCollect;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D> ();
+                GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>().AddPlayerListener(this);
+
     }
+
 
     // Update is called once per frame
     void Update()
